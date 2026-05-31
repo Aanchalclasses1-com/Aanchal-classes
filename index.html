@@ -3,117 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aanchal Classes | Maths Specialist</title>
+<title>Aanchal Classes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0d0d0d;
-color:white;
-line-height:1.6;
+background:#f8fbff;
+color:#333;
+overflow-x:hidden;
 }
 
-header{
-background:linear-gradient(135deg,#000,#1a1a1a);
-text-align:center;
-padding:80px 20px;
-border-bottom:3px solid gold;
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
 .logo{
-width:120px;
-height:120px;
-margin:auto;
-border:3px solid gold;
-border-radius:50%;
+font-size:28px;
+font-weight:700;
+color:#4f46e5;
+}
+
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#333;
+font-weight:600;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:45px;
-font-weight:bold;
-color:gold;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero-content{
+animation:fadeUp 1s ease;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:1.3rem;
 margin-bottom:20px;
-}
-
-header h1{
-font-size:3rem;
-color:gold;
-}
-
-.tagline{
-font-size:1.2rem;
-margin-top:10px;
-color:#ddd;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:gold;
-color:black;
+padding:14px 30px;
+background:#ff9800;
+color:white;
 text-decoration:none;
-font-weight:bold;
-border-radius:30px;
+border-radius:40px;
+font-weight:700;
+transition:.3s;
 }
 
-section{
-padding:60px 10%;
+.btn:hover{
+transform:translateY(-5px);
 }
 
-.section-title{
+.section{
+padding:80px 8%;
+}
+
+.title{
 text-align:center;
-font-size:2rem;
-color:gold;
-margin-bottom:30px;
+font-size:2.3rem;
+color:#4f46e5;
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-background:#161616;
+background:white;
 padding:25px;
-border:1px solid #333;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.review{
+background:white;
+padding:20px;
+border-left:5px solid #ff9800;
 border-radius:15px;
 margin-bottom:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:20px;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-table th,
-table td{
-border:1px solid #444;
+th{
+background:#4f46e5;
+color:white;
+}
+
+th,td{
+padding:15px;
+text-align:center;
+border:1px solid #eee;
+}
+
+.contact-box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+input,textarea{
+width:100%;
 padding:12px;
-text-align:center;
-}
-
-table th{
-background:gold;
-color:black;
-}
-
-.contact{
-text-align:center;
-}
-
-.contact p{
-font-size:18px;
 margin:10px 0;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+button{
+padding:12px 20px;
+background:#4CAF50;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
 }
 
 footer{
-background:black;
+background:#111827;
+color:white;
 text-align:center;
-padding:20px;
-border-top:2px solid gold;
+padding:25px;
 }
 
 .whatsapp{
@@ -125,128 +209,148 @@ color:white;
 padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
-font-weight:bold;
+font-weight:700;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 @media(max-width:768px){
-header h1{
-font-size:2rem;
+.hero h1{
+font-size:2.5rem;
 }
-section{
-padding:40px 5%;
+nav{
+padding:15px;
 }
 }
 </style>
 </head>
+
 <body>
 
-<header>
-
-<div class="logo">AC</div>
-
-<h1>AANCHAL CLASSES</h1>
-
-<p class="tagline">
-Excellence In Education • Maths Specialist
-</p>
-
-<a href="#contact" class="btn">
-Admissions Open
-</a>
-
-</header>
-
-<section>
-<h2 class="section-title">About Us</h2>
-
-<div class="card">
-Aanchal Classes is a trusted offline coaching institute for Classes 3rd to 8th.
-We focus on concept clarity, regular practice, personal attention and excellent academic performance.
-Special guidance is provided in Mathematics to help students build strong foundations and confidence.
+<nav>
+<div class="logo">Aanchal Classes</div>
+<div>
+<a href="#about">About</a>
+<a href="#fees">Fees</a>
+<a href="#contact">Contact</a>
 </div>
+</nav>
 
+<section class="hero">
+<div class="hero-content">
+<h1>🎓 Aanchal Classes</h1>
+<p>Classes 3rd to 8th • All Subjects • Maths Specialist</p>
+<a href="#contact" class="btn">Admissions Open</a>
+</div>
 </section>
 
-<section>
+<section class="section" id="about">
+<h2 class="title">Why Choose Us?</h2>
 
-<h2 class="section-title">Subjects Offered</h2>
+<div class="cards">
 
 <div class="card">
-✅ Mathematics (Specialist)<br>
-✅ Science<br>
-✅ English<br>
-✅ Hindi<br>
-✅ Social Science
+<h3>📚 All Subjects</h3>
+<p>Complete guidance for school curriculum.</p>
 </div>
 
-</section>
-
-<section>
-
-<h2 class="section-title">Fee Structure</h2>
+<div class="card">
+<h3>🧮 Maths Specialist</h3>
+<p>Strong focus on concepts and problem solving.</p>
+</div>
 
 <div class="card">
+<h3>📝 Weekly Tests</h3>
+<p>Regular assessment and improvement tracking.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="fees">
+
+<h2 class="title">Fee Structure</h2>
 
 <table>
-
-<tr>
-<th>Class</th>
-<th>Monthly Fee</th>
-</tr>
-
+<tr><th>Class</th><th>Monthly Fee</th></tr>
 <tr><td>3rd</td><td>₹700</td></tr>
 <tr><td>4th</td><td>₹800</td></tr>
 <tr><td>5th</td><td>₹900</td></tr>
 <tr><td>6th</td><td>₹1000</td></tr>
 <tr><td>7th</td><td>₹1100</td></tr>
 <tr><td>8th</td><td>₹1200</td></tr>
-
 </table>
 
+</section>
+
+<section class="section">
+<h2 class="title">Gallery</h2>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80">
+</div>
+</section>
+
+<section class="section">
+<h2 class="title">Student Reviews</h2>
+
+<div class="review">
+⭐⭐⭐⭐⭐ Excellent teaching and personal attention.
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐ Maths became much easier after joining.
 </div>
 
 </section>
 
-<section>
+<section class="section">
+<h2 class="title">Location</h2>
 
-<h2 class="section-title">Why Choose Us?</h2>
+<iframe
+src="https://maps.google.com/maps?q=110032&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="350"
+style="border:0;border-radius:20px;">
+</iframe>
 
-<div class="card">
-🏆 Maths Specialist Coaching<br>
-📚 All Subjects Covered<br>
-📝 Weekly Tests<br>
-👨‍🏫 Personal Attention<br>
-⭐ Small Batch Size<br>
-🎯 Result Oriented Learning
+</section>
+
+<section class="section" id="contact">
+
+<h2 class="title">Admission Form</h2>
+
+<div class="contact-box">
+
+<p><b>Aanchal Yadav</b></p>
+<p>📍 Near City Gym, Chaska Restaurant, Mangal Tiki Wali Gali, 110032</p>
+<p>📞 7678688509 | 8822521800</p>
+
+<br>
+
+<input type="text" placeholder="Student Name">
+<input type="text" placeholder="Class">
+<input type="tel" placeholder="Phone Number">
+<textarea placeholder="Message"></textarea>
+
+<button>Apply Now</button>
+
 </div>
 
 </section>
 
-<section id="contact">
-
-<h2 class="section-title">Contact Us</h2>
-
-<div class="card contact">
-
-<p><strong>Aanchal Yadav</strong></p>
-
-<p>
-📍 Near City Gym<br>
-Chaska Restaurant<br>
-Mangal Tiki Wali Gali<br>
-110032
-</p>
-
-<p>📞 7678688509</p>
-<p>📞 8822521800</p>
-
-</div>
-
-</section>
-
-<a class="whatsapp" href="https://wa.me/917678688509">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/917678688509">WhatsApp</a>
 
 <footer>
 © 2026 Aanchal Classes | All Rights Reserved

@@ -2,71 +2,73 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Kids Tuition - Final Boss</title>
+<title>Happy Kids Tuition</title>
 
 <style>
 body{
     margin:0;
     font-family:"Comic Sans MS", cursive;
+    background: linear-gradient(to bottom, #fff7d1, #dff6ff);
     overflow-x:hidden;
-    background: linear-gradient(to bottom, #fff8d6, #dff9ff);
 }
 
-/* 🌈 HERO */
-.hero{
-    height:100vh;
+/* 🌈 SOFT RAINBOW HEADER */
+.header{
+    text-align:center;
+    padding:18px;
+    font-size:38px;
+    font-weight:bold;
+    color:white;
+    background: linear-gradient(90deg, #ff4d4d, #ffb703, #00bbf9, #38b000, #9b5de5);
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    letter-spacing:1px;
+}
+
+/* 🪄 LOGO BADGE */
+.logo{
+    width:90px;
+    height:90px;
+    margin:20px auto 10px;
+    border-radius:50%;
+    background: radial-gradient(circle, #fff, #ffd60a, #ff4d6d);
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    color:white;
-    background: linear-gradient(-45deg, red, orange, yellow, green, blue, violet);
-    background-size:400% 400%;
-    animation: gradientMove 8s infinite;
-    position:relative;
+    font-size:40px;
+    box-shadow:0 0 20px rgba(255,200,0,0.7);
+    animation: glow 2s infinite alternate;
 }
 
-@keyframes gradientMove{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+@keyframes glow{
+    from{transform:scale(1);}
+    to{transform:scale(1.08);}
+}
+
+/* 🌟 HERO */
+.hero{
+    text-align:center;
+    padding:20px;
 }
 
 .hero h1{
-    font-size:50px;
-    text-shadow:3px 3px 10px black;
+    font-size:42px;
+    margin:10px 0;
+    color:#222;
 }
 
 .hero p{
-    font-size:20px;
+    font-size:18px;
+    color:#444;
 }
 
-/* ☁️ Clouds */
-.cloud{
-    position:absolute;
-    background:white;
-    border-radius:50px;
-    opacity:0.8;
-    animation: floatCloud 20s linear infinite;
-}
-
-.cloud1{width:120px;height:60px;top:20%;left:-200px;}
-.cloud2{width:180px;height:80px;top:40%;left:-300px;}
-.cloud3{width:140px;height:70px;top:60%;left:-250px;}
-
-@keyframes floatCloud{
-    from{transform:translateX(0);}
-    to{transform:translateX(140vw);}
-}
-
-/* 🎈 Balloons */
+/* 🎈 ONLY 3 BALLOONS (LESS CLUTTER) */
 .balloon{
     position:absolute;
-    width:45px;
-    height:60px;
+    width:40px;
+    height:55px;
     border-radius:50%;
     animation: float 10s infinite ease-in-out;
+    opacity:0.85;
 }
 
 .balloon:after{
@@ -75,247 +77,107 @@ body{
     width:2px;
     height:40px;
     background:#444;
-    top:60px;
-    left:22px;
+    top:55px;
+    left:20px;
 }
 
-.b1{background:red;left:10%;animation-duration:7s;}
-.b2{background:blue;left:25%;animation-duration:6s;}
-.b3{background:yellow;left:40%;animation-duration:8s;}
-.b4{background:green;left:60%;animation-duration:7.5s;}
-.b5{background:violet;left:80%;animation-duration:6.5s;}
+.b1{background:#ff4d4d; left:15%; animation-duration:7s;}
+.b2{background:#00bbf9; left:50%; animation-duration:9s;}
+.b3{background:#38b000; left:80%; animation-duration:8s;}
 
 @keyframes float{
-    0%{transform:translateY(100vh);}
+    0%{transform:translateY(110vh);}
     100%{transform:translateY(-200px);}
 }
 
-/* 📦 Sections */
-.section{
-    width:85%;
-    margin:60px auto;
+/* 🧸 KIDS CARDS */
+.kid-section{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:20px;
+}
+
+.kid-card{
+    width:180px;
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
     background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    box-shadow:0 8px 15px rgba(0,0,0,0.1);
     transition:0.3s;
 }
 
-.section:hover{transform:scale(1.02);}
-
-/* 🧠 Headings */
-h2{
-    text-align:center;
-    color:#ff4081;
+.kid-card:hover{
+    transform:scale(1.1);
 }
 
-/* 📊 Table */
-table{
-    width:100%;
-    border-collapse:collapse;
-}
+.kid-card:nth-child(1){background:#fff3b0;}
+.kid-card:nth-child(2){background:#bde0fe;}
+.kid-card:nth-child(3){background:#caffbf;}
 
-td,th{
-    border:1px solid #ddd;
-    padding:10px;
-    text-align:center;
-}
-
-th{background:#ffe66d;}
-
-/* 🧸 Testimonials */
-.testimonial{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.card{
-    width:200px;
-    padding:15px;
-    border-radius:15px;
-    background:#fefefe;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    text-align:center;
-}
-
-/* 📞 Button */
-.btn{
-    display:block;
-    width:220px;
-    margin:15px auto;
-    padding:12px;
-    text-align:center;
-    border-radius:30px;
-    background:linear-gradient(45deg,#ff4d6d,#ffcc00);
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    background:#ff4d6d;
     color:white;
-    text-decoration:none;
-    font-weight:bold;
+    border-radius:20px;
+    font-size:12px;
+    margin-top:8px;
 }
 
-/* 🧾 Form */
-input,textarea{
-    width:95%;
-    padding:10px;
-    margin:8px 0;
-    border-radius:10px;
-    border:1px solid #ccc;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:30px;
-    background:green;
-    color:white;
-    font-size:16px;
-}
-
-/* 🎊 Confetti Canvas */
-canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    pointer-events:none;
-}
-
-/* 📱 Responsive */
+/* 📱 RESPONSIVE */
 @media(max-width:600px){
-    .hero h1{font-size:30px;}
+    .hero h1{font-size:28px;}
+    .kid-card{width:80%;}
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="confetti"></canvas>
-
-<!-- HERO -->
-<div class="hero">
-
-<div class="cloud cloud1"></div>
-<div class="cloud cloud2"></div>
-<div class="cloud cloud3"></div>
-
+<!-- 🎈 BALLOONS (LESS) -->
 <div class="balloon b1"></div>
 <div class="balloon b2"></div>
 <div class="balloon b3"></div>
-<div class="balloon b4"></div>
-<div class="balloon b5"></div>
 
-<h1>🎓 Happy Kids Tuition</h1>
-<p>Where learning becomes a rainbow adventure 🌈</p>
+<!-- 🪄 LOGO -->
+<div class="logo">🎓</div>
+
+<!-- 🌈 HEADER -->
+<div class="header">
+Happy Kids Tuition
 </div>
 
-<!-- ABOUT -->
-<div class="section">
-<h2>👩‍🏫 Teacher Details</h2>
-<p><b>Name:</b> Aanchal Yadav</p>
-<p><b>Location:</b> Near City Gym, 110032</p>
-<p><b>Address:</b> Chaska Restaurant, Mangal Tiki Wali Gali</p>
-<p><b>Phone:</b> 7678688509 / 8822521800</p>
+<!-- HERO TEXT -->
+<div class="hero">
+<h1>Learning Made Fun 🌈</h1>
+<p>Where small kids grow into bright stars ⭐</p>
+
+<div class="kid-section">
+
+<div class="kid-card">
+🧒<br>
+Fun Learning<br>
+<div class="badge">Play + Study</div>
 </div>
 
-<!-- FEES -->
-<div class="section">
-<h2>📚 Fees Structure</h2>
-<table>
-<tr><th>Class</th><th>Fees (₹)</th></tr>
-<tr><td>3rd</td><td>700</td></tr>
-<tr><td>4th</td><td>800</td></tr>
-<tr><td>5th</td><td>900</td></tr>
-<tr><td>6th</td><td>1000</td></tr>
-<tr><td>7th</td><td>1100</td></tr>
-<tr><td>8th</td><td>1200</td></tr>
-</table>
+<div class="kid-card">
+📚<br>
+Smart Classes<br>
+<div class="badge">Easy Notes</div>
 </div>
 
-<!-- TESTIMONIALS -->
-<div class="section">
-<h2>🧸 Happy Students</h2>
-
-<div class="testimonial">
-<div class="card">⭐ "Mujhe maths ab easy lagta hai!"</div>
-<div class="card">⭐ "Ma'am best teacher ever!"</div>
-<div class="card">⭐ "Learning is fun here 🎈"</div>
+<div class="kid-card">
+🎨<br>
+Creative Growth<br>
+<div class="badge">Activity Based</div>
 </div>
-
-<a class="btn" href="https://wa.me/917678688509">📞 WhatsApp Admission</a>
-</div>
-
-<!-- ADMISSION FORM -->
-<div class="section">
-<h2>📝 Admission Form</h2>
-
-<form onsubmit="return validateForm()">
-<input type="text" id="name" placeholder="Student Name">
-<input type="text" id="class" placeholder="Class (3rd - 8th)">
-<textarea id="msg" placeholder="Message"></textarea>
-<button type="submit">Submit Admission</button>
-</form>
 
 </div>
 
-<!-- FOOTER -->
-<div class="section" style="text-align:center;background:#222;color:white;">
-Made with ❤️ for Bright Kids 🌈
 </div>
-
-<script>
-// 🎊 CONFETTI ENGINE
-const canvas = document.getElementById("confetti");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let pieces = [];
-
-for(let i=0;i<120;i++){
-    pieces.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*6+2,
-        d:Math.random()*50,
-        color:["red","blue","yellow","green","orange"][Math.floor(Math.random()*5)]
-    });
-}
-
-function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    for(let i=0;i<pieces.length;i++){
-        let p = pieces[i];
-        ctx.fillStyle=p.color;
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2,true);
-        ctx.fill();
-
-        p.y += 2;
-        if(p.y > canvas.height){
-            p.y = 0;
-            p.x = Math.random()*canvas.width;
-        }
-    }
-    requestAnimationFrame(draw);
-}
-draw();
-
-// 🧠 FORM VALIDATION
-function validateForm(){
-    let name=document.getElementById("name").value;
-    let cls=document.getElementById("class").value;
-
-    if(name=="" || cls==""){
-        alert("Please fill all details!");
-        return false;
-    }
-
-    alert("Admission Submitted Successfully 🎉");
-    return false;
-}
-</script>
 
 </body>
 </html>

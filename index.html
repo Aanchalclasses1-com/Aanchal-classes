@@ -2,56 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Kids Tuition</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aanchal Classes</title>
 
 <style>
 body{
     margin:0;
     font-family:"Comic Sans MS", cursive;
-    background: linear-gradient(to bottom, #fff7d1, #dff6ff);
-    overflow-x:hidden;
+    background: linear-gradient(to bottom, #fff7d6, #e0f7ff);
 }
 
-/* 🌈 SOFT RAINBOW HEADER */
+/* 🌈 HEADER */
 .header{
     text-align:center;
     padding:18px;
-    font-size:38px;
+    font-size:34px;
     font-weight:bold;
     color:white;
-    background: linear-gradient(90deg, #ff4d4d, #ffb703, #00bbf9, #38b000, #9b5de5);
-    box-shadow:0 5px 20px rgba(0,0,0,0.2);
-    letter-spacing:1px;
+    background: linear-gradient(90deg, #ff4d4d, #ffbe0b, #00bbf9, #38b000, #8338ec);
 }
 
-/* 🪄 LOGO BADGE */
+/* 🎓 LOGO */
 .logo{
     width:90px;
     height:90px;
-    margin:20px auto 10px;
-    border-radius:50%;
-    background: radial-gradient(circle, #fff, #ffd60a, #ff4d6d);
+    margin:20px auto;
+    border-radius:20px;
+    background:white;
     display:flex;
     justify-content:center;
     align-items:center;
     font-size:40px;
-    box-shadow:0 0 20px rgba(255,200,0,0.7);
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow{
-    from{transform:scale(1);}
-    to{transform:scale(1.08);}
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* 🌟 HERO */
 .hero{
     text-align:center;
-    padding:20px;
+    padding:10px 15px;
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:40px;
     margin:10px 0;
     color:#222;
 }
@@ -61,37 +53,8 @@ body{
     color:#444;
 }
 
-/* 🎈 ONLY 3 BALLOONS (LESS CLUTTER) */
-.balloon{
-    position:absolute;
-    width:40px;
-    height:55px;
-    border-radius:50%;
-    animation: float 10s infinite ease-in-out;
-    opacity:0.85;
-}
-
-.balloon:after{
-    content:"";
-    position:absolute;
-    width:2px;
-    height:40px;
-    background:#444;
-    top:55px;
-    left:20px;
-}
-
-.b1{background:#ff4d4d; left:15%; animation-duration:7s;}
-.b2{background:#00bbf9; left:50%; animation-duration:9s;}
-.b3{background:#38b000; left:80%; animation-duration:8s;}
-
-@keyframes float{
-    0%{transform:translateY(110vh);}
-    100%{transform:translateY(-200px);}
-}
-
-/* 🧸 KIDS CARDS */
-.kid-section{
+/* 🧒 FEATURE CARDS */
+.features{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
@@ -99,83 +62,160 @@ body{
     margin-top:20px;
 }
 
-.kid-card{
-    width:180px;
+.card{
+    width:160px;
     padding:15px;
     border-radius:15px;
-    text-align:center;
     background:white;
+    text-align:center;
     box-shadow:0 8px 15px rgba(0,0,0,0.1);
     transition:0.3s;
 }
 
-.kid-card:hover{
-    transform:scale(1.1);
+.card:hover{
+    transform:scale(1.08);
 }
 
-.kid-card:nth-child(1){background:#fff3b0;}
-.kid-card:nth-child(2){background:#bde0fe;}
-.kid-card:nth-child(3){background:#caffbf;}
+.card:nth-child(1){background:#fff3b0;}
+.card:nth-child(2){background:#bde0fe;}
+.card:nth-child(3){background:#caffbf;}
 
-.badge{
-    display:inline-block;
-    padding:6px 12px;
-    background:#ff4d6d;
-    color:white;
+/* 📚 SECTION */
+.section{
+    width:85%;
+    margin:40px auto;
+    background:white;
+    padding:20px;
     border-radius:20px;
-    font-size:12px;
-    margin-top:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+h2{
+    text-align:center;
+    color:#ff4081;
+}
+
+/* 📊 TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+td,th{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#ffe66d;
+}
+
+/* 📍 MAP */
+iframe{
+    width:100%;
+    height:300px;
+    border:none;
+    border-radius:15px;
+}
+
+/* 📞 BUTTON */
+.btn{
+    display:block;
+    width:200px;
+    margin:15px auto;
+    padding:12px;
+    text-align:center;
+    border-radius:30px;
+    background:linear-gradient(45deg,#ff4d6d,#ffbe0b);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 /* 📱 RESPONSIVE */
 @media(max-width:600px){
     .hero h1{font-size:28px;}
-    .kid-card{width:80%;}
+    .card{width:80%;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎈 BALLOONS (LESS) -->
-<div class="balloon b1"></div>
-<div class="balloon b2"></div>
-<div class="balloon b3"></div>
-
-<!-- 🪄 LOGO -->
-<div class="logo">🎓</div>
-
 <!-- 🌈 HEADER -->
 <div class="header">
-Happy Kids Tuition
+Aanchal Classes
 </div>
 
-<!-- HERO TEXT -->
+<!-- 🎓 LOGO -->
+<div class="logo">🎓</div>
+
+<!-- 🌟 HERO -->
 <div class="hero">
-<h1>Learning Made Fun 🌈</h1>
-<p>Where small kids grow into bright stars ⭐</p>
+<h1>Learning Made Easy 🌈</h1>
+<p>Safe, simple and fun learning for students 🧒📚</p>
 
-<div class="kid-section">
+<div class="features">
 
-<div class="kid-card">
+<div class="card">
 🧒<br>
-Fun Learning<br>
-<div class="badge">Play + Study</div>
+Friendly Teaching
 </div>
 
-<div class="kid-card">
+<div class="card">
 📚<br>
-Smart Classes<br>
-<div class="badge">Easy Notes</div>
+Smart Study
 </div>
 
-<div class="kid-card">
+<div class="card">
 🎨<br>
-Creative Growth<br>
-<div class="badge">Activity Based</div>
+Activity Based
 </div>
 
 </div>
+</div>
+
+<!-- 👩‍🏫 DETAILS -->
+<div class="section">
+<h2>👩‍🏫 Teacher Details</h2>
+<p><b>Name:</b> Aanchal Yadav</p>
+<p><b>Location:</b> Near City Gym, 110032</p>
+<p><b>Address:</b> Chaska Restaurant, Mangal Tiki Wali Gali</p>
+</div>
+
+<!-- 📚 FEES -->
+<div class="section">
+<h2>📚 Fees Structure</h2>
+
+<table>
+<tr><th>Class</th><th>Fees (₹)</th></tr>
+<tr><td>3rd</td><td>700</td></tr>
+<tr><td>4th</td><td>800</td></tr>
+<tr><td>5th</td><td>900</td></tr>
+<tr><td>6th</td><td>1000</td></tr>
+<tr><td>7th</td><td>1100</td></tr>
+<tr><td>8th</td><td>1200</td></tr>
+</table>
+</div>
+
+<!-- 📞 CONTACT -->
+<div class="section">
+<h2>📞 Contact</h2>
+<p>7678688509</p>
+<p>8822521800</p>
+
+<a class="btn" href="https://wa.me/917678688509">WhatsApp Admission</a>
+</div>
+
+<!-- 📍 MAP -->
+<div class="section">
+<h2>📍 Location</h2>
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...REPLACE_THIS_WITH_YOUR_MAP_LINK"
+allowfullscreen>
+</iframe>
 
 </div>
 

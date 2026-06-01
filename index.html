@@ -3,64 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aanchal Classes</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Aanchal Classes | Learn • Play • Grow</title>
 
-<style>@media (max-width:768px){
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-.hero h1{
-font-size:2.2rem;
-}
+<style>
 
-.hero p{
-font-size:1rem;
-}
-
-nav{
-flex-direction:column;
-gap:10px;
-}
-
-nav a{
-margin:5px;
-}
-
-.title{
-font-size:1.8rem;
-}
-
-.section{
-padding:60px 5%;
-}
-
-table{
-font-size:14px;
-}
-
-.whatsapp{
-right:10px;
-bottom:10px;
-padding:12px 16px;
-}
-}
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:'Baloo 2',cursive;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
-background:#f8fbff;
-color:#333;
+background:#f8fcff;
 overflow-x:hidden;
+color:#333;
 }
+
+/* NAVBAR */
 
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
 padding:15px 8%;
 display:flex;
@@ -73,71 +45,197 @@ box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
 .logo{
-font-size:28px;
-font-weight:700;
-color:#4f46e5;
+font-size:32px;
+font-weight:800;
+color:#ff5757;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
 }
 
 nav a{
 text-decoration:none;
-margin-left:20px;
-color:#333;
-font-weight:600;
+font-weight:700;
+color:#444;
 }
 
+/* HERO */
+
 .hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+position:relative;
+overflow:hidden;
+
+background:
+linear-gradient(
+-45deg,
+#ff5757,
+#ffd93d,
+#6bcb77,
+#4d96ff,
+#ff85c2
+);
+
+background-size:400% 400%;
+
+animation:rainbow 12s ease infinite;
+}
+
+@keyframes rainbow{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.hero-content{
+position:relative;
+z-index:5;
 color:white;
 padding:20px;
 }
 
-.hero-content{
-animation:fadeUp 1s ease;
-}
-
 .hero h1{
-font-size:4rem;
-margin-bottom:10px;
+font-size:5rem;
+font-weight:800;
+line-height:1.1;
+text-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 .hero p{
-font-size:1.3rem;
-margin-bottom:20px;
+font-size:1.5rem;
+margin-top:10px;
 }
 
-.btn{
+.join-btn{
 display:inline-block;
-padding:14px 30px;
-background:#ff9800;
-color:white;
+margin-top:25px;
+padding:15px 35px;
+background:white;
+color:#ff5757;
 text-decoration:none;
-border-radius:40px;
-font-weight:700;
+font-size:22px;
+font-weight:800;
+border-radius:50px;
 transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-.btn:hover{
-transform:translateY(-5px);
+.join-btn:hover{
+transform:translateY(-6px) scale(1.05);
 }
+
+/* FLOATING CLOUDS */
+
+.cloud{
+position:absolute;
+font-size:80px;
+opacity:.9;
+}
+
+.c1{
+top:80px;
+left:-100px;
+animation:cloudMove 28s linear infinite;
+}
+
+.c2{
+top:220px;
+left:-200px;
+animation:cloudMove 36s linear infinite;
+}
+
+.c3{
+top:350px;
+left:-150px;
+animation:cloudMove 32s linear infinite;
+}
+
+@keyframes cloudMove{
+from{
+transform:translateX(-200px);
+}
+to{
+transform:translateX(140vw);
+}
+}
+
+/* BALLOONS */
+
+.balloon{
+position:absolute;
+font-size:70px;
+animation:floatBalloon 4s ease-in-out infinite;
+}
+
+.b1{
+left:8%;
+bottom:80px;
+}
+
+.b2{
+right:10%;
+bottom:120px;
+}
+
+.b3{
+right:20%;
+top:140px;
+}
+
+@keyframes floatBalloon{
+50%{
+transform:translateY(-20px);
+}
+}
+
+/* FLOATING STARS */
+
+.star{
+position:absolute;
+font-size:35px;
+animation:twinkle 2s infinite;
+}
+
+.s1{
+top:120px;
+right:25%;
+}
+
+.s2{
+top:260px;
+left:18%;
+}
+
+.s3{
+top:180px;
+right:10%;
+}
+
+@keyframes twinkle{
+50%{
+transform:scale(1.3);
+}
+}
+
+/* GENERAL SECTION */
 
 .section{
-padding:80px 8%;
+padding:90px 8%;
 }
 
 .title{
 text-align:center;
-font-size:2.3rem;
-color:#4f46e5;
+font-size:3rem;
 margin-bottom:40px;
+color:#4d96ff;
+font-weight:800;
 }
 
 .cards{
@@ -149,248 +247,112 @@ gap:25px;
 .card{
 background:white;
 padding:25px;
-border-radius:20px;
+border-radius:30px;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 transition:.3s;
+text-align:center;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px) rotate(2deg);
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.red{
+border-top:10px solid #ff5757;
 }
 
-.gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:15px;
-transition:.4s;
+.blue{
+border-top:10px solid #4d96ff;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
+.green{
+border-top:10px solid #6bcb77;
 }
 
-.review{
-background:white;
-padding:20px;
-border-left:5px solid #ff9800;
-border-radius:15px;
-margin-bottom:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+.yellow{
+border-top:10px solid #ffd93d;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-th{
-background:#4f46e5;
-color:white;
-}
-
-th,td{
-padding:15px;
-text-align:center;
-border:1px solid #eee;
-}
-
-.contact-box{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-input,textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
-border-radius:10px;
-}
-
-button{
-padding:12px 20px;
-background:#4CAF50;
-color:white;
-border:none;
-border-radius:10px;
-cursor:pointer;
-}
-
-footer{
-background:#111827;
-color:white;
-text-align:center;
-padding:25px;
-}
-
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+.fee{
+font-size:30px;
+font-weight:800;
+margin-top:10px;
 }
 
 @media(max-width:768px){
+
 .hero h1{
-font-size:2.5rem;
+font-size:3rem;
 }
-nav{
-padding:15px;
+
+.hero p{
+font-size:1.1rem;
 }
+
+nav ul{
+display:none;
 }
+
+.cloud{
+font-size:50px;
+}
+
+.balloon{
+font-size:45px;
+}
+
+}
+
 </style>
 </head>
-
 <body>
 
 <nav>
-<div class="logo">Aanchal Classes</div>
-<div>
-<a href="#about">About</a>
-<a href="#fees">Fees</a>
-<a href="#contact">Contact</a>
+
+<div class="logo">
+🌈 Aanchal Classes
 </div>
+
+<ul>
+<li><a href="#fees">Fees</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
 </nav>
 
 <section class="hero">
+
+<div class="cloud c1">☁️</div>
+<div class="cloud c2">☁️</div>
+<div class="cloud c3">☁️</div>
+
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div>
+
+<div class="star s1">⭐</div>
+<div class="star s2">⭐</div>
+<div class="star s3">⭐</div>
+
 <div class="hero-content">
-<h1>🎓 Aanchal Classes</h1>
-<p>Classes 3rd to 8th • All Subjects • Maths Specialist</p>
-<a href="#contact" class="btn">Admissions Open</a>
-</div>
-</section>
 
-<section class="section" id="about">
-<h2 class="title">Why Choose Us?</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>📚 All Subjects</h3>
-<p>Complete guidance for school curriculum.</p>
+<div style="font-size:90px;">
+👦📚👧
 </div>
 
-<div class="card">
-<h3>🧮 Maths Specialist</h3>
-<p>Strong focus on concepts and problem solving.</p>
-</div>
+<h1>
+Learn • Play • Grow
+</h1>
 
-<div class="card">
-<h3>📝 Weekly Tests</h3>
-<p>Regular assessment and improvement tracking.</p>
-</div>
+<p>
+Classes 3rd to 8th • All Subjects • Maths Specialist
+</p>
 
-</div>
-</section>
-
-<section class="section" id="fees">
-
-<h2 class="title">Fee Structure</h2>
-
-<table>
-<tr><th>Class</th><th>Monthly Fee</th></tr>
-<tr><td>3rd</td><td>₹700</td></tr>
-<tr><td>4th</td><td>₹800</td></tr>
-<tr><td>5th</td><td>₹900</td></tr>
-<tr><td>6th</td><td>₹1000</td></tr>
-<tr><td>7th</td><td>₹1100</td></tr>
-<tr><td>8th</td><td>₹1200</td></tr>
-</table>
-
-</section>
-
-<section class="section">
-<h2 class="title">Gallery</h2>
-
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80">
-<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80">
-</div>
-</section>
-
-<section class="section">
-<h2 class="title">Student Reviews</h2>
-
-<div class="review">
-⭐⭐⭐⭐⭐ Excellent teaching and personal attention.
-</div>
-
-<div class="review">
-⭐⭐⭐⭐⭐ Maths became much easier after joining.
-</div>
-
-</section>
-
-<section class="section">
-<h2 class="title">Location</h2>
-
-<iframe
-src="https://maps.google.com/maps?q=110032&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="350"
-style="border:0;border-radius:20px;">
-</iframe>
-
-</section>
-
-<section class="section" id="contact">
-
-<h2 class="title">Admission Form</h2>
-
-<div class="contact-box">
-
-<p><b>Aanchal Yadav</b></p>
-<p>📍 Near City Gym, Chaska Restaurant, Mangal Tiki Wali Gali, 110032</p>
-<p>📞 7678688509 | 8822521800</p>
-
-<br>
-
-<input type="text" placeholder="Student Name">
-<input type="text" placeholder="Class">
-<input type="tel" placeholder="Phone Number">
-<textarea placeholder="Message"></textarea>
-
-<button>Apply Now</button>
+<a href="#contact" class="join-btn">
+🎓 Admissions Open
+</a>
 
 </div>
 
 </section>
-
-<a class="whatsapp" href="https://wa.me/917678688509">WhatsApp</a>
-
-<footer>
-© 2026 Aanchal Classes | All Rights Reserved
-</footer>
-
-</body>
-</html>
